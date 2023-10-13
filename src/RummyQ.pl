@@ -13,7 +13,10 @@ turno_valido([X|R1], [Y|R2]):-
     trio([Y|R2]),
     colores_trio([X|R1]).
 
-%Me parece ineficiente. colores asociados a numeros.
+%Un trio valido es: 3 o 4 numeros iguales:
+trio([X,X,X]).
+trio([X,X,X,X]).
+
 colores_trio([X,Y,Z]) :-
     color(X),
     color(Y),
@@ -27,8 +30,6 @@ colores_trio([W,X,Y,Z]):-
     color(Z),
     all_different([W, X, Y, Z]).
 
-
-%Reglas
 color(1).
 color(2).
 color(3).
@@ -38,10 +39,6 @@ color('amarillo').
 color('negro').
 color('azul').
 color('rojo').
-
-%Un trio valido es: 3 o 4 numeros iguales:
-trio([X,X,X]).
-trio([X,X,X,X]).
 
 % Una seguidilla valida es: minimo 4 numeros (que seguiran un orden
 % secuencial):
@@ -58,3 +55,4 @@ secuencia([X,Y|R]):-
     X2 is X +1,
     Y == X2,
     secuencia([Y|R]).
+    
