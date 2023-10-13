@@ -47,3 +47,13 @@ Una seguidilla será válida cuando:
 Se ha hecho uso del paradigma declarativo de programación, y se ha empleado el lenguaje de programación Prolog. 
 
 Se han declarado un conjunto de reglas básicas y de claúsulas que permiten evaluar cuando un movimento/jugada es válida o no. Basandosé en estudiar y revisar las relaciones entre entidades. 
+
+El programa consta de 2 clausulas principales, llamadas 'Turno_valido(X, Y)' donde X e Y son listas, X se refiere a los/el color del cual son las fichas. Y es una lista con los números. 
+##### Se puede preguntar si X moviento es válido como: 
+_?-turno_valido(['amarillo'], [3,4,5,6,7])_
+_?-turno_valido(['negro, rojo, azul'], [8,8,8])_
+
+_?-turno_valido(['amarillo'], [3,6,6,7])_
+_?-turno_valido(['negro, negro, rojo, azul'], [1,1,1,1])_
+
+Si el movimiento es válido, la aplicación devolverá 'true'. De no serlo, devolderá 'false'. 
