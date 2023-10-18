@@ -49,11 +49,27 @@ Se ha hecho uso del paradigma declarativo de programación, y se ha empleado el 
 Se han declarado un conjunto de reglas básicas y de claúsulas que permiten evaluar cuando un movimento/jugada es válida o no. Basandosé en estudiar y revisar las relaciones entre entidades. 
 
 El programa consta de 2 clausulas principales, llamadas 'Turno_valido(X, Y)' donde X e Y son listas, X se refiere a los/el color del cual son las fichas. Y es una lista con los números. 
+
+*Para efectos de eficiencia de uso, los colores se han numerado del 1-4*
+*Donde: [Amarillo = 1, Azul = 2, Rojo = 3, Negro = 4]*
 ##### Se puede preguntar si X moviento es válido como: 
-_?-turno_valido(['amarillo'], [3,4,5,6,7])_
-_?-turno_valido(['negro, rojo, azul'], [8,8,8])_
+_?-turno_valido([color/colores*], [trio/seguidilla*])_ :
 
-_?-turno_valido(['amarillo'], [3,6,6,7])_
-_?-turno_valido(['negro, negro, rojo, azul'], [1,1,1,1])_
+_?-turno_valido([1], [3,4,5,6,7])_
+    ···Donde el 1 representa el color amarillo···
+    
+_?-turno_valido([4, 3, 2], [8,8,8])_
+ ···Donde (4 = negro, 3 = rojo, 2 = azul)···
 
-Si el movimiento es válido, la aplicación devolverá 'true'. De no serlo, devolderá 'false'. 
+Si el movimiento es válido, la aplicación devolverá 'true'. De no serlo, devolderá 'false'. Ejemplo: 
+
+_?-turno_valido([1], [3,4,5,6,7])_
+=True
+_?-turno_valido([4, 3, 2], [8,8,8])_
+=True
+_?-turno_valido([4, 2], [1,2,3,4,5])_
+=False
+_?-turno_valido([4, 2, 2], [8,8,8])_
+=False
+_?-turno_valido([4, 3, 2, 1], [3,3,3,3])_
+=True
