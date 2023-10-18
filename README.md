@@ -56,20 +56,24 @@ El programa consta de 2 clausulas principales, llamadas 'Turno_valido(X, Y)' don
 _?-turno_valido([color/colores*], [trio/seguidilla*])_ :
 
 _?-turno_valido([1], [3,4,5,6,7])_
-    ···Donde el 1 representa el color amarillo···
+···Donde el 1 representa el color amarillo···
     
 _?-turno_valido([4, 3, 2], [8,8,8])_
- ···Donde (4 = negro, 3 = rojo, 2 = azul)···
+···Donde (4 = negro, 3 = rojo, 2 = azul)···
 
 Si el movimiento es válido, la aplicación devolverá 'true'. De no serlo, devolderá 'false'. Ejemplo: 
 
 _?-turno_valido([1], [3,4,5,6,7])_
 =True
+
 _?-turno_valido([4, 3, 2], [8,8,8])_
 =True
+
 _?-turno_valido([4, 2], [1,2,3,4,5])_
 =False
+
 _?-turno_valido([4, 2, 2], [8,8,8])_
 =False
+
 _?-turno_valido([4, 3, 2, 1], [3,3,3,3])_
 =True
